@@ -1,45 +1,59 @@
-#include <iostream>
-#include <queue>
-#include <stdio.h>
+#include<iostream>
+#include<stdio.h>
+#include<queue>
 using namespace std;
+
+int N, x;
+string s;
 queue<int> q;
-int x, a;
-string input; 
-int main(){
+
+
+
+int main()
+{
+	// 빠른 입출력을 위해서 적어줍니다.
 	cin.tie(NULL);
 	cin.sync_with_stdio(false);
-	
-	cin>>a;
-	for(int i = 1; i <= a; i++){
 
-		cin>>input;
-		
-		if(input == "push"){
+	cin >> N;
+
+	for (int i = 0; i < N; i++)
+	{
+		cin >> s;
+
+		if (s == "push")
+		{
 			cin >> x;
 			q.push(x);
-		}else if(input == "pop"){
-			if(!q.empty()){
-				cout<<q.front()<<endl;
+		}
+		else if (s == "pop")
+		{
+			if (!q.empty())
+			{
+				cout << q.front() << '\n';
 				q.pop();
-			}else{
-				cout<<"-1"<<endl;
 			}
-		}else if(input == "size"){
-			cout<<q.size()<<endl;
-		}else if(input == "empty"){
-			cout<<q.empty()<<endl;
-		}else if(input == "front"){
-			if(!q.empty()){
-				cout<<q.front()<<endl;
-			}else{
-				cout<<"-1"<<endl;
-			}
-		}else if(input == "back"){
-			if(!q.empty()){
-				cout<<q.back()<<endl;
-			}else{
-				cout<<"-1"<<endl;
-			}
+			else cout << -1 << '\n';
+
+		}
+		else if (s == "size")
+		{
+			cout << q.size() << '\n';
+		}
+		else if (s == "empty")
+		{
+			cout << q.empty() << '\n';
+		}
+		else if (s == "front")
+		{
+			if (!q.empty()) cout << q.front() << '\n';
+			else cout << -1 << '\n';
+		}
+		else // s == "back"
+		{
+			if (!q.empty()) cout << q.back() << '\n';
+			else cout << -1 << '\n';
 		}
 	}
+
 }
