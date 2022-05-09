@@ -5,11 +5,11 @@ using namespace std;
 int main(){
 	int a;
 	cin>>a;
-	for(int i = 0; i < a; ++i){
+	for(int i = 0; i < a; i++){
 		stack<char> st;
 		string s;
 		cin>>s;
-		for(int j = 0; j < s.length(); ++j){
+		for(int j = 0; j < s.length(); j++){
 			if(st.empty() || s[j] == '('){
 				st.push(s[j]);
 			}else if(st.top() == '('){
@@ -20,7 +20,7 @@ int main(){
 			cout<<"YES"<<endl;
 			
 		}else{
-			cout<<"no"<<endl;
+			cout<<"NO"<<endl;
 		}
 	}
 }
