@@ -5,6 +5,8 @@ using namespace std;
 queue<int> q;
 
 int main(){
+	ios::sync_with_stdio(false);
+	cin.tie(NULL);
 	int num;
 	cin>>num;
 	for(int i = 1; i <= num; i++){
