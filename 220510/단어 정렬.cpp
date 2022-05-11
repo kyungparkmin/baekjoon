@@ -1,32 +1,34 @@
-#include<iostream>
-#include<string>
-#include<vector>
-#include<algorithm>
+#include <iostream>
+#include <algorithm>
+#include <string>
+#include <vector>
 using namespace std;
+vector<string> v;
+bool comp(string a, string b){
+	return a<b;
+} 
+bool compare(string a, string b){
+	if(a.size()==b.size()){
+		return a<b;
+	}
+	return a.size() < b.size();
 
-vector<string> v;;
-bool comp_length(string s1, string s2) {
-	if (s1.size() == s2.size()) return s1 < s2;
-	else return s1.size() < s2.size();
 }
-
-int main() {
-
-	int N; cin >> N;
-	for (int i = 0; i < N; i++) {
-		string tmp;
-		cin >> tmp;
-		v.push_back(tmp);
+int main(){
+	ios::sync_with_stdio(false);
+	cin.tie(NULL);
+	int num;
+	cin>>num;
+	for(int i = 0; i < num; i++){
+		string str;
+		cin>>str;
+		v.push_back(str);
 	}
-
-	sort(v.begin(), v.end(), comp_length);
-
+	sort(v.begin(), v.end(), compare);
+	
 	v.erase(unique(v.begin(), v.end()),v.end());
-	for (int i = 0; i < v.size(); i++) {
-		cout << v[i] << endl;
+	
+	for(int i = 0; i < v.size(); i++){
+		cout<<v[i]<<endl;
 	}
-
-
-
-	return 0;
 }
